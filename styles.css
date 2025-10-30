@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #2C3E50;
+    --accent-color: #AF601A;
+    --light-background: #f4f7f6;
+    --white-color: #FFFFFF;
+    --dark-text: #333333;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-background);
+    color: var(--dark-text);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 5%; /* Espaciado interior */
+    display: flex; /* Activa Flexbox para alinear elementos */
+    justify-content: space-between; /* Pone el logo a la izquierda y la nav a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    position: sticky; /* Hace que el encabezado se quede fijo arriba */
+    top: 0;
+    z-index: 1000; /* Se asegura que esté por encima de todo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- ESTILOS PARA LA NUEVA SECCIÓN "HÉROE" --- */
+.hero {
+    height: 70vh; /* Altura del 70% de la ventana */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo-fitzroy.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- Ajustes al contenido principal --- */
+main {
+    max-width: 900px;
+    margin: 40px auto; /* Más espacio arriba */
+}
+
+section {
+    background-color: var(--white-color); /* Fondo blanco sólido */
+    padding: 25px;
+    margin: 0 10px 20px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* El resto del CSS sigue igual */
+table {
+    width: 100%; border-collapse: collapse; margin-top: 20px;
+}
+th, td {
+    padding: 12px; border-bottom: 1px solid #dddddd; text-align: left;
+}
+thead {
+    background-color: var(--primary-color); color: var(--white-color); font-weight: 700;
+}
+tbody tr:nth-child(even) {
+    background-color: var(--light-background);
+}
+tbody tr:hover {
+    background-color: #e6e6e6;
+}
+.info-contacto ul {
+    list-style: none; padding: 0;
+}
+.info-contacto li {
+    padding: 15px 0; border-bottom: 1px solid #eee;
+}
+.info-contacto li:last-child {
+    border-bottom: none;
+}
+.info-contacto a {
+    color: var(--accent-color); font-weight: bold; text-decoration: none;
+}
+.info-contacto a:hover {
+    text-decoration: underline;
+}
+.info-contacto li i {
+    color: var(--accent-color); margin-right: 10px; font-size: 1.2em; width: 25px; text-align: center;
+}
+.aclaracion {
+    text-align: center; margin-top: 20px; font-size: 0.9em; color: #666;
+}
+footer {
+    text-align: center; padding: 20px; margin-top: 20px; background-color: var(--primary-color); color: var(--white-color);
+}
