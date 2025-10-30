@@ -138,4 +138,74 @@ tbody tr:hover {
 }
 footer {
     text-align: center; padding: 20px; margin-top: 20px; background-color: var(--primary-color); color: var(--white-color);
+
+}
+/* ============================================= */
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES --- */
+/* ============================================= */
+/* Estas reglas se aplican si el ancho de la pantalla es de 768px o menos */
+@media (max-width: 768px) {
+
+    /* 1. Arreglamos el Encabezado (Header) */
+    header {
+        flex-direction: column; /* Apila el logo y el menú uno encima del otro */
+        padding: 20px;
+    }
+
+    nav {
+        margin-top: 15px; /* Espacio entre el logo y los enlaces */
+    }
+
+    nav li {
+        margin: 0 10px; /* Reducimos el espacio entre enlaces */
+    }
+
+    /* 2. Arreglamos el Texto de Bienvenida (Hero) */
+    .hero {
+        height: 50vh; /* Hacemos la sección un poco más baja */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8em; /* Reducimos drásticamente el tamaño del título */
+        padding: 0 10px; /* Añadimos un poco de espacio a los lados */
+    }
+
+    .hero-text p {
+        font-size: 1em; /* Reducimos el tamaño del subtítulo */
+    }
+
+    /* 3. ¡La Magia! Arreglamos la Tabla de Precios */
+    thead {
+        display: none; /* Ocultamos la cabecera original (Servicio / Precio) */
+    }
+
+    tr {
+        display: block; /* Hacemos que cada fila se comporte como un bloque */
+        border: 1px solid #ddd;
+        margin-bottom: 15px;
+    }
+    
+    td {
+        display: block; /* Hacemos que cada celda se comporte como un bloque */
+        text-align: right; /* Alineamos el contenido a la derecha */
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+
+    td:last-child {
+        border-bottom: none; /* Quitamos la línea de la última celda */
+    }
+
+    /* Creamos una "falsa" cabecera para cada celda */
+    td::before {
+        content: attr(data-label); /* Usaremos un atributo que añadiremos al HTML */
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Asignamos los textos de las cabeceras */
+    tr td:nth-of-type(1)::before { content: "Servicio / Destino:"; }
+    tr td:nth-of-type(2)::before { content: "Precio (ARS):"; }
 }
