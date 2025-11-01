@@ -141,73 +141,86 @@ footer {
 
 }
 /* ============================================= */
-/* --- ESTILOS PARA DISPOSITIVOS MÓVILES --- */
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES (VERSIÓN TARJETA) --- */
 /* ============================================= */
-/* Estas reglas se aplican si el ancho de la pantalla es de 768px o menos */
 @media (max-width: 768px) {
 
     /* 1. Arreglamos el Encabezado (Header) */
     header {
-        flex-direction: column; /* Apila el logo y el menú uno encima del otro */
+        flex-direction: column;
         padding: 20px;
     }
-
     nav {
-        margin-top: 15px; /* Espacio entre el logo y los enlaces */
+        margin-top: 15px;
     }
-
     nav li {
-        margin: 0 10px; /* Reducimos el espacio entre enlaces */
+        margin: 0 10px;
     }
 
     /* 2. Arreglamos el Texto de Bienvenida (Hero) */
     .hero {
-        height: 50vh; /* Hacemos la sección un poco más baja */
+        height: 50vh;
     }
-
     .hero-text h1 {
-        font-size: 1.8em; /* Reducimos drásticamente el tamaño del título */
-        padding: 0 10px; /* Añadimos un poco de espacio a los lados */
+        font-size: 1.8em;
+        padding: 0 10px;
     }
-
     .hero-text p {
-        font-size: 1em; /* Reducimos el tamaño del subtítulo */
+        font-size: 1em;
     }
 
-    /* 3. ¡La Magia! Arreglamos la Tabla de Precios */
-    thead th { /* Ocultamos las CELDAS DE CABECERA directamente */
-        display: none; 
+    /* 3. ¡NUEVA SOLUCIÓN ARMÓNICA PARA LA TABLA! (Estilo Tarjeta) */
+    thead {
+        display: none; /* Ocultamos la cabecera original */
     }
 
     tr {
-        display: block; /* Hacemos que cada fila se comporte como un bloque */
-        border: 1px solid #ddd;
-        margin-bottom: 15px;
+        display: block;
+        border: none; /* Quitamos el borde de la fila */
+        background-color: #f9f9f9; /* Un fondo muy claro para la tarjeta */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+        border-radius: 8px; /* Bordes redondeados */
+        margin-bottom: 20px;
+        padding: 15px;
     }
     
     td {
-        display: block; /* Hacemos que cada celda se comporte como un bloque */
-        text-align: right; /* Alineamos el contenido a la derecha */
-        padding-left: 50%; /* ¡CAMBIO AQUÍ! Añadimos más espacio a la izquierda para la etiqueta */
+        display: block; /* Hacemos que la celda ocupe todo el ancho */
+        text-align: left; /* Alineamos todo a la izquierda */
         position: relative;
-        border-bottom: 1px solid #eee;
+        border-bottom: none; /* Quitamos las líneas internas */
+        padding: 8px 0; /* Espacio vertical entre los elementos */
     }
 
+    /* Quitamos el borde inferior que habíamos puesto antes */
     td:last-child {
-        border-bottom: none; /* Quitamos la línea de la última celda */
+        border-bottom: none;
     }
 
-    /* Creamos una "falsa" cabecera para cada celda */
+    /* La "falsa" cabecera (etiqueta) */
     td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 10px;
+        display: block; /* Hacemos que la etiqueta ocupe su propia línea */
         font-weight: bold;
-        text-align: left;
+        color: var(--primary-color); /* Usamos el color primario para la etiqueta */
+        font-size: 0.8em; /* Un poco más pequeña */
+        text-transform: uppercase; /* En mayúsculas para diferenciarla */
+        margin-bottom: 4px; /* Pequeño espacio entre la etiqueta y el valor */
+        
+        /* Reseteamos los estilos de posición absoluta */
+        position: static;
+        width: auto;
+    }
+
+    /* Hacemos que el valor del precio resalte más */
+    td[data-label="Precio"] {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: var(--accent-color); /* Usamos el color cobre para el precio */
     }
 
     /* Asignamos los textos de las cabeceras */
-    tr td:nth-of-type(1)::before { content: "Servicio / Destino:"; }
-    tr td:nth-of-type(2)::before { content: "Precio (ARS):"; }
+    tr td:nth-of-type(1)::before { content: "Servicio / Destino"; }
+    tr td:nth-of-type(2)::before { content: "Precio (ARS)"; }
 }
 
