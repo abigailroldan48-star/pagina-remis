@@ -175,8 +175,8 @@ footer {
     }
 
     /* 3. ¡La Magia! Arreglamos la Tabla de Precios */
-    thead {
-        display: none; /* Ocultamos la cabecera original (Servicio / Precio) */
+    thead th { /* Ocultamos las CELDAS DE CABECERA directamente */
+        display: none; 
     }
 
     tr {
@@ -188,6 +188,7 @@ footer {
     td {
         display: block; /* Hacemos que cada celda se comporte como un bloque */
         text-align: right; /* Alineamos el contenido a la derecha */
+        padding-left: 50%; /* ¡CAMBIO AQUÍ! Añadimos más espacio a la izquierda para la etiqueta */
         position: relative;
         border-bottom: 1px solid #eee;
     }
@@ -198,7 +199,7 @@ footer {
 
     /* Creamos una "falsa" cabecera para cada celda */
     td::before {
-        content: attr(data-label); /* Usaremos un atributo que añadiremos al HTML */
+        content: attr(data-label);
         position: absolute;
         left: 10px;
         font-weight: bold;
@@ -209,3 +210,4 @@ footer {
     tr td:nth-of-type(1)::before { content: "Servicio / Destino:"; }
     tr td:nth-of-type(2)::before { content: "Precio (ARS):"; }
 }
+
