@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #2C3E50;
-    --accent-color: #AF601A;
-    --light-background: #f4f7f6;
+    --primary-color: #1A345B; /* Azul Oscuro de tu paleta */
+    --secondary-color: #4C6A9E; /* Azul Medio/Grisáceo de tu paleta (para fondos de tabla, etc.) */
+    --accent-color: #6A9EE0; /* ¡NUEVO COLOR DE ACENTO AZUL BRILLANTE DE TU PALETA! */
+    --light-background: #E0EBF5; /* Un blanco/gris azulado muy suave de tu paleta */
     --white-color: #FFFFFF;
     --dark-text: #333333;
 }
@@ -316,4 +317,5 @@ footer {
     tr td:nth-of-type(2)::before { content: "Precio Base"; }
     tr td:nth-of-type(3)::before { content: "Precio Especial (Efectivo/Transf.)"; }
 }
+
 
