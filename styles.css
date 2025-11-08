@@ -17,13 +17,13 @@ body {
 header {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 15px 5%; /* Espaciado interior */
-    display: flex; /* Activa Flexbox para alinear elementos */
-    justify-content: space-between; /* Pone el logo a la izquierda y la nav a la derecha */
-    align-items: center; /* Centra verticalmente los elementos */
-    position: sticky; /* Hace que el encabezado se quede fijo arriba */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Se asegura que esté por encima de todo */
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -55,9 +55,9 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* --- ESTILOS PARA LA NUEVA SECCIÓN "HÉROE" --- */
+/* SECCIÓN "HÉROE" */
 .hero {
-    height: 70vh; /* Altura del 70% de la ventana */
+    height: 70vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo-fitzroy.jpeg');
     background-size: cover;
     background-position: center;
@@ -71,7 +71,7 @@ nav a:hover {
 .hero-text h1 {
     font-size: 2.8em;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-text p {
@@ -79,14 +79,14 @@ nav a:hover {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* --- Ajustes al contenido principal --- */
+/* CONTENIDO PRINCIPAL */
 main {
     max-width: 900px;
-    margin: 40px auto; /* Más espacio arriba */
+    margin: 40px auto;
 }
 
 section {
-    background-color: var(--white-color); /* Fondo blanco sólido */
+    background-color: var(--white-color);
     padding: 25px;
     margin: 0 10px 20px 10px;
     border-radius: 8px;
@@ -99,53 +99,136 @@ section h2 {
     margin-top: 0;
 }
 
-/* El resto del CSS sigue igual */
+.section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -10px auto 30px auto;
+    font-style: italic;
+    color: #555;
+}
+
+/* NUEVA SECCIÓN DE GALERÍA */
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.gallery-card {
+    flex-basis: 32%; /* Cada tarjeta ocupa aprox 1/3 del espacio */
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden; /* Para que la imagen redondeada se vea bien */
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Evita que la imagen se deforme */
+}
+
+.gallery-card h3 {
+    color: var(--primary-color);
+    margin: 15px 0 10px 0;
+}
+
+.gallery-card p {
+    padding: 0 15px 15px 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* TABLA DE PRECIOS */
 table {
-    width: 100%; border-collapse: collapse; margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
+
 th, td {
-    padding: 12px; border-bottom: 1px solid #dddddd; text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
 }
+
 thead {
-    background-color: var(--primary-color); color: var(--white-color); font-weight: 700;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 700;
 }
+
 tbody tr:nth-child(even) {
     background-color: var(--light-background);
 }
+
 tbody tr:hover {
     background-color: #e6e6e6;
 }
+
+/* Columna de Precio Especial resaltada */
+td:last-child {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* SECCIÓN DE CONTACTO */
 .info-contacto ul {
-    list-style: none; padding: 0;
+    list-style: none;
+    padding: 0;
 }
+
 .info-contacto li {
-    padding: 15px 0; border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
+
 .info-contacto li:last-child {
     border-bottom: none;
 }
+
 .info-contacto a {
-    color: var(--accent-color); font-weight: bold; text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
 }
+
 .info-contacto a:hover {
     text-decoration: underline;
 }
-.info-contacto li i {
-    color: var(--accent-color); margin-right: 10px; font-size: 1.2em; width: 25px; text-align: center;
-}
-.aclaracion {
-    text-align: center; margin-top: 20px; font-size: 0.9em; color: #666;
-}
-footer {
-    text-align: center; padding: 20px; margin-top: 20px; background-color: var(--primary-color); color: var(--white-color);
 
+.info-contacto li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 25px;
+    text-align: center;
 }
+
+.aclaracion {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
 /* ============================================= */
-/* --- ESTILOS PARA DISPOSITIVOS MÓVILES (VERSIÓN TARJETA) --- */
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES --- */
 /* ============================================= */
 @media (max-width: 768px) {
 
-    /* 1. Arreglamos el Encabezado (Header) */
+    /* Encabezado */
     header {
         flex-direction: column;
         padding: 20px;
@@ -157,7 +240,7 @@ footer {
         margin: 0 10px;
     }
 
-    /* 2. Arreglamos el Texto de Bienvenida (Hero) */
+    /* Hero */
     .hero {
         height: 50vh;
     }
@@ -169,58 +252,68 @@ footer {
         font-size: 1em;
     }
 
-    /* 3. ¡NUEVA SOLUCIÓN ARMÓNICA PARA LA TABLA! (Estilo Tarjeta) */
+    /* Galería en Móvil */
+    .gallery-container {
+        flex-direction: column; /* Apila las tarjetas */
+    }
+    .gallery-card {
+        flex-basis: 100%; /* Cada tarjeta ocupa el 100% del ancho */
+        margin-bottom: 20px;
+    }
+
+    /* Tabla de Precios en Móvil (Estilo Tarjeta) */
     thead {
-        display: none; /* Ocultamos la cabecera original */
+        display: none;
     }
 
     tr {
         display: block;
-        border: none; /* Quitamos el borde de la fila */
-        background-color: #f9f9f9; /* Un fondo muy claro para la tarjeta */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
-        border-radius: 8px; /* Bordes redondeados */
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 8px;
         margin-bottom: 20px;
         padding: 15px;
+        border: none;
     }
     
     td {
-        display: block; /* Hacemos que la celda ocupe todo el ancho */
-        text-align: left; /* Alineamos todo a la izquierda */
+        display: block;
+        text-align: left;
         position: relative;
-        border-bottom: none; /* Quitamos las líneas internas */
-        padding: 8px 0; /* Espacio vertical entre los elementos */
+        border-bottom: none;
+        padding: 8px 0;
     }
 
-    /* Quitamos el borde inferior que habíamos puesto antes */
     td:last-child {
         border-bottom: none;
     }
 
-    /* La "falsa" cabecera (etiqueta) */
     td::before {
         content: attr(data-label);
-        display: block; /* Hacemos que la etiqueta ocupe su propia línea */
+        display: block;
         font-weight: bold;
-        color: var(--primary-color); /* Usamos el color primario para la etiqueta */
-        font-size: 0.8em; /* Un poco más pequeña */
-        text-transform: uppercase; /* En mayúsculas para diferenciarla */
-        margin-bottom: 4px; /* Pequeño espacio entre la etiqueta y el valor */
-        
-        /* Reseteamos los estilos de posición absoluta */
+        color: var(--primary-color);
+        font-size: 0.8em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
         position: static;
         width: auto;
     }
 
-    /* Hacemos que el valor del precio resalte más */
-    td[data-label="Precio"] {
+    /* Estilos para las celdas de precio en móvil */
+    td[data-label="Base"] {
+        text-decoration: line-through; /* Tachamos el precio base */
+        color: #777;
+    }
+    td[data-label="Especial"] {
         font-weight: bold;
-        font-size: 1.2em;
-        color: var(--accent-color); /* Usamos el color cobre para el precio */
+        font-size: 1.3em;
+        color: var(--accent-color);
     }
 
     /* Asignamos los textos de las cabeceras */
     tr td:nth-of-type(1)::before { content: "Servicio / Destino"; }
-    tr td:nth-of-type(2)::before { content: "Precio (ARS)"; }
+    tr td:nth-of-type(2)::before { content: "Precio Base"; }
+    tr td:nth-of-type(3)::before { content: "Precio Especial (Efectivo/Transf.)"; }
 }
 
