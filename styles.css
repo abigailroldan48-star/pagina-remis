@@ -301,11 +301,10 @@ footer {
         width: auto;
     }
 
-    /* Estilos para las celdas de precio en móvil */
-    td[data-label="Base"] {
-        text-decoration: line-through;
-        color: #777;
-    }
+   /* Estilos para las celdas de precio en móvil */
+td[data-label="Base"] {
+    color: #777; /* Mantenemos el color gris para diferenciarlo */
+}
     td[data-label="Especial"] {
         font-weight: bold;
         font-size: 1.3em;
@@ -317,4 +316,5 @@ footer {
     tr td:nth-of-type(2)::before { content: "Precio Base"; }
     tr td:nth-of-type(3)::before { content: "Precio Especial (Efectivo/Transf.)"; }
 }
+
 
