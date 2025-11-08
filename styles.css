@@ -56,3 +56,265 @@ nav a:hover {
     color: var(--accent-color); /* Usamos el azul brillante para el hover del menú */
 }
 
+/* SECCIÓN "HÉROE" */
+.hero {
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo-fitzroy.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+section {
+    background-color: var(--white-color);
+    padding: 25px;
+    margin: 0 10px 20px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -10px auto 30px auto;
+    font-style: italic;
+    color: #555;
+}
+
+/* SECCIÓN DE GALERÍA */
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gallery-card {
+    flex-basis: 32%;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-card h3 {
+    color: var(--primary-color);
+    margin: 15px 0 10px 0;
+}
+
+.gallery-card p {
+    padding: 0 15px 15px 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* TABLA DE PRECIOS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--secondary-color); /* Cabecera con azul medio */
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--light-background);
+}
+
+tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+/* Columna de Precio Especial resaltada */
+td:last-child {
+    font-weight: bold;
+    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+}
+
+/* SECCIÓN DE CONTACTO */
+.info-contacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-contacto li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-contacto li:last-child {
+    border-bottom: none;
+}
+
+.info-contacto a {
+    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.info-contacto a:hover {
+    text-decoration: underline;
+}
+
+.info-contacto li i {
+    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 25px;
+    text-align: center;
+}
+
+.aclaracion {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+/* ============================================= */
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES --- */
+/* ============================================= */
+@media (max-width: 768px) {
+
+    /* Encabezado */
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav li {
+        margin: 0 10px;
+    }
+
+    /* Hero */
+    .hero {
+        height: 50vh;
+    }
+    .hero-text h1 {
+        font-size: 1.8em;
+        padding: 0 10px;
+    }
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    /* Galería en Móvil */
+    .gallery-container {
+        flex-direction: column;
+    }
+    .gallery-card {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Tabla de Precios en Móvil (Estilo Tarjeta) */
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: none;
+    }
+    
+    td {
+        display: block;
+        text-align: left;
+        position: relative;
+        border-bottom: none;
+        padding: 8px 0;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        color: var(--primary-color);
+        font-size: 0.8em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        position: static;
+        width: auto;
+    }
+
+    /* Estilos para las celdas de precio en móvil */
+    td[data-label="Base"] {
+        text-decoration: line-through;
+        color: #777;
+    }
+    td[data-label="Especial"] {
+        font-weight: bold;
+        font-size: 1.3em;
+        color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    }
+
+    /* Asignamos los textos de las cabeceras */
+    tr td:nth-of-type(1)::before { content: "Servicio / Destino"; }
+    tr td:nth-of-type(2)::before { content: "Precio Base"; }
+    tr td:nth-of-type(3)::before { content: "Precio Especial (Efectivo/Transf.)"; }
+}
+
