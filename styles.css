@@ -24,8 +24,6 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     overflow: hidden;
     text-align: center;
-
-    /* --- ¡LA MAGIA PARA DEJARLO FIJO! --- */
     position: sticky; /* Hacemos que se quede fijo */
     top: 20px;        /* Lo separamos 20px del borde superior */
     z-index: 1000;    /* Nos aseguramos de que esté por encima de todo */
@@ -47,15 +45,15 @@ header {
 }
 
 .header-nav ul {
-    list-style: none; /* QUITA LOS PUNTOS */
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* PONE LOS ENLACES EN LÍNEA */
+    display: flex;
 }
 
 .header-nav li {
     flex-grow: 1;
-    border-right: 1px solid var(--secondary-color); /* CREA LA LÍNEA VERTICAL */
+    border-right: 1px solid var(--secondary-color);
 }
 
 .header-nav li:last-child {
@@ -63,7 +61,7 @@ header {
 }
 
 .header-nav a {
-    color: var(--white-color); /* PONE EL TEXTO BLANCO */
+    color: var(--white-color);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1em;
