@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #1A345B; /* Azul Oscuro de tu paleta */
-    --secondary-color: #4C6A9E; /* Azul Medio/Grisáceo de tu paleta */
-    --accent-color: #6A9EE0; /* Azul brillante (para enlaces del menú) */
-    --light-background: #E0EBF5; /* Un blanco/gris azulado muy suave */
+    --primary-color: #1A345B;
+    --secondary-color: #4C6A9E;
+    --accent-color: #6A9EE0;
+    --light-background: #E0EBF5;
     --white-color: #FFFFFF;
     --dark-text: #333333;
 }
@@ -53,7 +53,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent-color); /* Usamos el azul brillante para el hover del menú */
+    color: var(--accent-color);
 }
 
 /* SECCIÓN "HÉROE" */
@@ -155,7 +155,7 @@ th, td {
 }
 
 thead {
-    background-color: var(--secondary-color); /* Cabecera con azul medio */
+    background-color: var(--secondary-color);
     color: var(--white-color);
     font-weight: 700;
 }
@@ -168,11 +168,17 @@ tbody tr:hover {
     background-color: #e6e6e6;
 }
 
-/* Columna de Precio Especial resaltada */
 td:last-child {
     font-weight: bold;
-    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    color: var(--primary-color);
 }
+
+/* ¡NUEVA REGLA! Estilo para la celda sin descuento */
+td.no-discount {
+    color: var(--dark-text);
+    font-weight: normal;
+}
+
 
 /* SECCIÓN DE CONTACTO */
 .info-contacto ul {
@@ -190,7 +196,7 @@ td:last-child {
 }
 
 .info-contacto a {
-    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    color: var(--primary-color);
     font-weight: bold;
     text-decoration: none;
 }
@@ -200,7 +206,7 @@ td:last-child {
 }
 
 .info-contacto li i {
-    color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+    color: var(--primary-color);
     margin-right: 10px;
     font-size: 1.2em;
     width: 25px;
@@ -301,14 +307,20 @@ footer {
         width: auto;
     }
 
-   /* Estilos para las celdas de precio en móvil */
-td[data-label="Base"] {
-    color: #777; /* Mantenemos el color gris para diferenciarlo */
-}
+    td[data-label="Base"] {
+        color: #777;
+    }
     td[data-label="Especial"] {
         font-weight: bold;
         font-size: 1.3em;
-        color: var(--primary-color); /* ¡CAMBIO AQUÍ! (Azul oscuro) */
+        color: var(--primary-color);
+    }
+    
+    /* ¡NUEVA REGLA! Estilo para la celda sin descuento en MÓVIL */
+    td[data-label="Especial"].no-discount {
+        color: var(--dark-text);
+        font-weight: normal;
+        font-size: 1em; /* Le quitamos el tamaño grande */
     }
 
     /* Asignamos los textos de las cabeceras */
@@ -316,5 +328,6 @@ td[data-label="Base"] {
     tr td:nth-of-type(2)::before { content: "Precio Base"; }
     tr td:nth-of-type(3)::before { content: "Precio Especial (Efectivo/Transf.)"; }
 }
+
 
 
