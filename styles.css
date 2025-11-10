@@ -15,65 +15,48 @@ body {
     color: var(--dark-text);
 }
 
-/* --- NUEVO ESTILO DE MENÚ (HEADER) --- */
+/* --- ESTILO DE MENÚ ORIGINAL (ANCHO Y FIJO) --- */
 header {
-    max-width: 500px; /* Ancho del bloque del menú */
-    margin: 20px auto; /* Centra el bloque */
     background-color: var(--primary-color);
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    overflow: hidden;
-    text-align: center;
-    position: sticky; /* Hacemos que se quede fijo */
-    top: 20px;        /* Lo separamos 20px del borde superior */
-    z-index: 1000;    /* Nos aseguramos de que esté por encima de todo */
+    color: var(--white-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.header-title {
-    padding: 15px;
-}
-
-.header-title a {
+.logo a {
     color: var(--white-color);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
-.header-nav {
-    border-top: 1px solid var(--secondary-color);
-}
-
-.header-nav ul {
-    list-style: none;
+nav ul {
     padding: 0;
     margin: 0;
-    display: flex;
+    list-style: none;
 }
 
-.header-nav li {
-    flex-grow: 1;
-    border-right: 1px solid var(--secondary-color);
+nav li {
+    display: inline-block;
+    margin-left: 25px;
 }
 
-.header-nav li:last-child {
-    border-right: none;
-}
-
-.header-nav a {
+nav a {
     color: var(--white-color);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1em;
-    padding: 15px 10px;
-    display: block;
-    transition: background-color 0.3s;
 }
 
-.header-nav a:hover {
-    background-color: var(--secondary-color);
+nav a:hover {
+    color: var(--accent-color);
 }
-/* FIN DE LOS ESTILOS DE MENÚ */
+/* FIN DE ESTILOS DE MENÚ ORIGINAL */
 
 
 /* SECCIÓN "HÉROE" */
@@ -256,16 +239,15 @@ footer {
 
     /* Encabezado */
     header {
-        max-width: 90%;
-        margin: 20px auto;
-        position: sticky;
-        top: 20px;
-        z-index: 1000;
+        flex-direction: column;
+        padding: 20px;
     }
-    .header-nav a {
-        font-size: 1em;
+    nav {
+        margin-top: 15px;
     }
-
+    nav li {
+        margin: 0 10px;
+    }
 
     /* Hero */
     .hero {
@@ -302,7 +284,7 @@ footer {
         padding: 15px;
         border: none;
     }
-
+    
     td {
         display: block;
         text-align: left;
@@ -335,7 +317,7 @@ footer {
         font-size: 1.3em;
         color: var(--primary-color);
     }
-
+    
     td[data-label="Especial"].no-discount {
         color: var(--dark-text);
         font-weight: normal;
